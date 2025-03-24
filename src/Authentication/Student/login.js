@@ -12,7 +12,7 @@ const Login = () => {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/student_login", { email, password })
+      .post("https://placement-portal-backend-3.onrender.com/student_login", { email, password })
       .then((res) => {
         console.log("Backend Response:", res.data); // Debugging line
         if (res.data.Status === "Success") {

@@ -39,7 +39,7 @@ const ContactForm = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:5000/contact",
+        "https://placement-portal-backend-3.onrender.com/contact",
         dataToSend
       );
 

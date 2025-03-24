@@ -27,7 +27,7 @@ function AddStudent() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:5000/student_signup", values)
+      .post("https://placement-portal-backend-3.onrender.com/student_signup", values)
       .then((res) => {
         alert("Student Added Succesfully"); // Success alert
         window.location.href = "/admin";

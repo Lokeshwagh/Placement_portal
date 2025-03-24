@@ -6,7 +6,7 @@ function ViewApplication() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/jobs")
+    fetch("https://placement-portal-backend-3.onrender.com/jobs")
       .then((res) => res.json())
       .then((data) => setJobs(data))
       .catch((err) => console.log(err));

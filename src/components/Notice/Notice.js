@@ -19,7 +19,7 @@ const Notice = () => {
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const response = await fetch("http://localhost:5000/shownotice");
+        const response = await fetch("https://placement-portal-backend-3.onrender.com/shownotice");
         const text = await response.text();
         console.log("Raw Response:", text);
         const data = JSON.parse(text);
@@ -39,7 +39,7 @@ const Notice = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await fetch("http://localhost:5000/studentmessages");
+        const response = await fetch("https://placement-portal-backend-3.onrender.com/studentmessages");
         if (!response.ok) throw new Error("Failed to fetch messages");
         const data = await response.json();
         setMessages(data);
@@ -66,7 +66,7 @@ const Notice = () => {
   const handleAddNotice = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/addnotice", {
+      const response = await fetch("https://placement-portal-backend-3.onrender.com/addnotice", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -93,7 +93,7 @@ const Notice = () => {
 
   const submitReply = (id) => {
     axios
-      .put(`http://localhost:5000/replymessage/${id}`, { reply: replies[id] })
+      .put(`https://placement-portal-backend-3.onrender.com/replymessage/${id}`, { reply: replies[id] })
       .then(() => {
         alert("Reply sent successfully");
         setMessages((prev) =>
@@ -109,7 +109,7 @@ const Notice = () => {
     if (window.confirm("Are you sure you want to delete this notice?")) {
       try {
         const response = await fetch(
-          `http://localhost:5000/deletenotice/${noticeId}`,
+          `https://placement-portal-backend-3.onrender.com/deletenotice/${noticeId}`,
           {
             method: "DELETE",
           }

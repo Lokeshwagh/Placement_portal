@@ -26,7 +26,7 @@ const Header = () => {
     const checkLoginStatus = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/student_profile",
+          "https://placement-portal-backend-3.onrender.com/student_profile",
           { withCredentials: true }
         );
         if (response.status === 200) setIsLoggedIn(true);

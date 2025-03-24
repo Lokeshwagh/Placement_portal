@@ -12,7 +12,7 @@ function ViewCordinator() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/cordinator/${id}`)
+      .get(`https://placement-portal-backend-3.onrender.com/cordinator/${id}`)
       .then((response) => {
         console.log("API Response:", response.data);
         setCordinator(response.data);

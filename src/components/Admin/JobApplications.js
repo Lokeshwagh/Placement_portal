@@ -40,14 +40,14 @@ function JobApplications() {
         setLoading(true);
         setError(null);
 
-        const jobResponse = await fetch(`http://localhost:5000/jobs/${jobId}`);
+        const jobResponse = await fetch(`https://placement-portal-backend-3.onrender.com/jobs/${jobId}`);
         if (!jobResponse.ok) {
           throw new Error(`Job details failed: ${jobResponse.status}`);
         }
         const jobData = await jobResponse.json();
 
         const appsResponse = await fetch(
-          `http://localhost:5000/jobs/${jobId}/applications`
+          `https://placement-portal-backend-3.onrender.com/jobs/${jobId}/applications`
         );
         if (!appsResponse.ok) {
           const errorData = await appsResponse.json();

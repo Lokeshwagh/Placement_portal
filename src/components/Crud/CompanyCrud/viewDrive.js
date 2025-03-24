@@ -12,7 +12,7 @@ function ViewDrive() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/drive/${id}`)
+      .get(`https://placement-portal-backend-3.onrender.com/drive/${id}`)
       .then((response) => {
         setDrive(response.data);
         setLoading(false);

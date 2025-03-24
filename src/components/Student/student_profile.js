@@ -19,7 +19,7 @@ const StudentProfile = () => {
     const fetchData = async () => {
       try {
         const profileResponse = await axios.get(
-          "http://localhost:5000/student_profile"
+          "https://placement-portal-backend-3.onrender.com/student_profile"
         );
         const studentId = profileResponse.data.id;
 
@@ -27,8 +27,8 @@ const StudentProfile = () => {
         setFormData(profileResponse.data);
 
         const [applicationsRes, messagesRes] = await Promise.all([
-          axios.get(`http://localhost:5000/students/${studentId}/applications`),
-          axios.get(`http://localhost:5000/students/${studentId}/messages`),
+          axios.get(`https://placement-portal-backend-3.onrender.com/students/${studentId}/applications`),
+          axios.get(`https://placement-portal-backend-3.onrender.com/students/${studentId}/messages`),
         ]);
 
         setAppliedJobs(applicationsRes.data);
@@ -48,7 +48,7 @@ const StudentProfile = () => {
 
   const handleSave = () => {
     axios
-      .put("http://localhost:5000/update_student_profile", formData)
+      .put("https://placement-portal-backend-3.onrender.com/update_student_profile", formData)
       .then((response) => {
         setProfile(formData);
         setIsEditing(false);
@@ -61,7 +61,7 @@ const StudentProfile = () => {
 
   const handleLogOut = () => {
     axios
-      .get("http://localhost:5000/logout")
+      .get("https://placement-portal-backend-3.onrender.com/logout")
       .then(() => {
         navigate("/");
         window.location.reload(true);
@@ -76,7 +76,7 @@ const StudentProfile = () => {
     if (window.confirm("Are you sure you want to withdraw this application?")) {
       axios
         .delete(
-          `http://localhost:5000/students/${profile.id}/applications/${jobId}`
+          `https://placement-portal-backend-3.onrender.com/students/${profile.id}/applications/${jobId}`
         )
         .then(() => {
           setAppliedJobs((prevJobs) =>

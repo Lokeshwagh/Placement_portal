@@ -5,7 +5,7 @@ function StudentNotice() {
   const [notices, setNotices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/shownotice")
+    fetch("https://placement-portal-backend-3.onrender.com/shownotice")
       .then((response) => response.json())
       .then((data) => setNotices(data))
       .catch((error) => console.error("Error:", error));

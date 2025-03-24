@@ -37,7 +37,7 @@ const Testimonials = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/testimonial"); // Replace with your actual API URL
+        const response = await axios.get("https://placement-portal-backend-3.onrender.com/testimonial"); // Replace with your actual API URL
         setTestimonials(response.data); // Store data in state
         setLoading(false);
       } catch (err) {

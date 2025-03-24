@@ -20,7 +20,7 @@ const AdminProfile = () => {
   useEffect(() => {
     const fetchAdminDetails = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/admin-profile");
+        const response = await axios.get("https://placement-portal-backend-3.onrender.com/admin-profile");
         setAdminDetails(response.data);
       } catch (error) {
         console.error("Error fetching admin details:", error);

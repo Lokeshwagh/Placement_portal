@@ -30,7 +30,7 @@ const Signup = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:5000/student_signup", values)
+      .post("https://placement-portal-backend-3.onrender.com/student_signup", values)
       .then((res) => {
         alert("User registered successfully!"); // Success alert
         navigate("/studentlogin");

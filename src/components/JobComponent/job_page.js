@@ -16,7 +16,7 @@ function Job() {
 
   // Fetch jobs from backend when component mounts
   useEffect(() => {
-    fetch("http://localhost:5000/jobs")
+    fetch("https://placement-portal-backend-3.onrender.com/jobs")
       .then((res) => res.json())
       .then((data) => setJobs(data))
       .catch((err) => console.log(err));
@@ -86,7 +86,7 @@ function Job() {
       }
 
       try {
-        await axios.post("http://localhost:5000/applications", {
+        await axios.post("https://placement-portal-backend-3.onrender.com/applications", {
           student_id: studentId,
           job_id: jobId,
         });

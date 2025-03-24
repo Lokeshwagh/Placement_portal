@@ -12,7 +12,7 @@ function ViewStudent() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/students/${id}`)
+      .get(`https://placement-portal-backend-3.onrender.com/students/${id}`)
       .then((response) => {
         setStudent(response.data);
         setLoading(false);

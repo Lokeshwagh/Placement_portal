@@ -22,15 +22,15 @@ const AdminDashboard = () => {
     const fetchAdminData = async () => {
       try {
         const profileResponse = await axios.get(
-          "http://localhost:5000/admin-profile"
+          "https://placement-portal-backend-3.onrender.com/admin-profile"
         );
         setAdminProfile(profileResponse.data);
 
-        const drivesResponse = await axios.get("http://localhost:5000/current");
+        const drivesResponse = await axios.get("https://placement-portal-backend-3.onrender.com/current");
         setActiveDrives(drivesResponse.data);
 
         const upcomingCompany = await axios.get(
-          "http://localhost:5000/upcoming"
+          "https://placement-portal-backend-3.onrender.com/upcoming"
         );
         setUpcomingCompany(upcomingCompany.data);
 
@@ -38,24 +38,24 @@ const AdminDashboard = () => {
         //       setpartnerdrive(partnerCompany.data);
 
         const fetchStudentdata = await axios.get(
-          "http://localhost:5000/student"
+          "https://placement-portal-backend-3.onrender.com/student"
         );
 
         setStudent(fetchStudentdata.data);
 
         const fetchCoordinatorData = await axios.get(
-          "http://localhost:5000/coordinator"
+          "https://placement-portal-backend-3.onrender.com/coordinator"
         );
         setCoordinatorData(fetchCoordinatorData.data);
 
         const fetchTestimonialData = await axios.get(
-          "http://localhost:5000/testimonial"
+          "https://placement-portal-backend-3.onrender.com/testimonial"
         );
         setTestimonialData(fetchTestimonialData.data);
 
         // Fetch dashboard stats
         const statsResponse = await axios.get(
-          "http://localhost:5000/dashboard-stats"
+          "https://placement-portal-backend-3.onrender.com/dashboard-stats"
         );
         setStats({
           registeredStudents: statsResponse.data.studentCount,
@@ -113,7 +113,7 @@ const AdminDashboard = () => {
       try {
         // Make DELETE request to the backend
         const response = await axios.delete(
-          `http://localhost:5000/studentremove/${id}`
+          `https://placement-portal-backend-3.onrender.com/studentremove/${id}`
         );
 
         if (response.status === 200) {
@@ -141,7 +141,7 @@ const AdminDashboard = () => {
       try {
         // Make DELETE request to the backend
         const response = await axios.delete(
-          `http://localhost:5000/driveremove/${id}`
+          `https://placement-portal-backend-3.onrender.com/driveremove/${id}`
         );
         //for the Drive
         if (response.status === 200) {
@@ -170,7 +170,7 @@ const AdminDashboard = () => {
       try {
         // Make DELETE request to the backend
         const response = await axios.delete(
-          `http://localhost:5000/upcommingdriveremove/${id}`
+          `https://placement-portal-backend-3.onrender.com/upcommingdriveremove/${id}`
         );
         //for the Drive
         if (response.status === 200) {
@@ -223,7 +223,7 @@ const AdminDashboard = () => {
         // Make DELETE request to the backend
 
         const response = await axios.delete(
-          `http://localhost:5000/coordinaterremove/${id}`
+          `https://placement-portal-backend-3.onrender.com/coordinaterremove/${id}`
         );
         //for the Drive
         if (response.status === 200) {
@@ -247,7 +247,7 @@ const AdminDashboard = () => {
         // Make DELETE request to the backend
 
         const response = await axios.delete(
-          `http://localhost:5000/testimonialremove/${id}`
+          `https://placement-portal-backend-3.onrender.com/testimonialremove/${id}`
         );
         //for the Drive
         if (response.status === 200) {

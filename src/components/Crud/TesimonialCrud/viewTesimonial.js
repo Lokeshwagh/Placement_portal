@@ -13,7 +13,7 @@ function ViewTestimonial() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/testimonial/${id}`)
+      .get(`https://placement-portal-backend-3.onrender.com/testimonial/${id}`)
       .then((response) => {
         console.log("API Response:", response.data);
         setTestimonial(response.data);

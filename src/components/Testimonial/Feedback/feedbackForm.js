@@ -20,7 +20,7 @@ const FeedbackForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/feedback",
+        "https://placement-portal-backend-3.onrender.com/feedback",
         formData
       );
       alert(response.data.message);

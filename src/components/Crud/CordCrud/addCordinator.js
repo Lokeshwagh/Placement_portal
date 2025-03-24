@@ -21,7 +21,7 @@ function AddCordinator() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/add_cordinator", {
+      const response = await fetch("https://placement-portal-backend-3.onrender.com/add_cordinator", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
